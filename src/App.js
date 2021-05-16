@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import { Observer } from 'mobx-react-lite';
+import './App.scss';
 
-function App() {
+
+import { RootStore } from './store/RootStore';
+import AppHeader from './components/AppHeader';
+import SignIn from './components/SignIn';
+import AppFooter from './components/AppFooter';
+
+const rootStore = new RootStore();
+
+export const RootStoreContext = React.createContext(rootStore);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Observer>
+      {() => (
+        <RootStoreContext.Provider value={rootStore}>
+            <AppHeader />
+            <div style={{height: 'calc(100vh - 136px)'}}>
+            <Switch>
+                <Route exact path="/login" component={SignIn} />
+              </Switch>
+            </div>
+              
+            <AppFooter/>
+        </RootStoreContext.Provider>
+      )}
+      </Observer>
+  )
 }
 
 export default App;
