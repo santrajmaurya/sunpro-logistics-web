@@ -4,10 +4,10 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+// .App-logo {
+//   height: 40vmin;
+//   pointer-events: none;
+// }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -15,20 +15,21 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+// .App-header {
+//   background-color: #282c34;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: white;
+// }
 
-.App-link {
-  color: #61dafb;
-}
+// .App-link {
+//   color: #61dafb;
+//   height: calc(100vh - 134px);
+// }
 
 @keyframes App-logo-spin {
   from {
@@ -37,4 +38,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.ant-layout-sider-trigger {
+  bottom: 67px;
+}
+
+.ant-layout-footer {
+  padding: 0;
+}
+// .ant-layout-content {
+//   // height: auto;
+//   min-height: 0 !important
+// }
+
+.ant-layout-sider-children {
+  position: fixed;
+  width: inherit;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-sub {
+  // color: rgba(255, 255, 255, 0.65);
+  // background: #001529;
+  height: inherit !important;
 }
