@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import {
   CarOutlined,
@@ -94,6 +94,7 @@ const App = () => {
         <Content
         style={{ padding: '20px', background: "#baebe0" }}
           >
+            <Route path="/" exact strict component={() => <Redirect to="/login" />} />
             <Route exact path="/login" component={SignIn} />
             <Route exact path="/booking" component={Booking} />
             <Route exact path="/placement" component={Placement} />
