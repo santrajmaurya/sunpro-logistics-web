@@ -1,38 +1,43 @@
 import React from "react";
-import { Layout, Row, Col, Typography } from "antd";
-import { Link } from "react-router-dom";
+import { Row, Col, Typography, Button } from "antd";
+import { Link, useHistory } from "react-router-dom";
 import { observer } from "mobx-react";
 
 import { ReactComponent as Logo } from "../assessts/crown.svg";
 
-const { Header } = Layout;
 const { Title } = Typography;
 
 const AppHeader = () => {
+  const history = useHistory();
+
+  const handleLogout = () => {
+    history.push('/login');
+  }
+  
   return (
       <Row sm={24}>
         <Col sm={2}>
         <Link>
-            <Logo style={{ marginTop: "8px" }} />
+            <Logo style={{ marginTop: "12px" }} />
           </Link>
         </Col>
         <Col sm={8}>
-          <Title level={4} style={{color: 'white', marginTop: '15px', paddingLeft: 0}}>Sunpro Logistics</Title>
+          <Title level={4} style={{color: 'white', marginTop: '20px', paddingLeft: 0}}>Sunpro Logistics</Title>
+        </Col>
+        <Col sm={2} offset={12}>
+        <Button
+            type="primary"
+            size="large"
+            danger
+            htmlType="submit"
+            style={{ cursor: "pointer", marginTop: '18px' }}
+            onClick={handleLogout}
+          >
+            Logout
+          </Button>
         </Col>
       </Row>
-
-    // <Header style={{ height: "66px", position: 'fixed' }}>
-    //   <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-    //     <Col className="gutter-row" span={2}>
-    //       <Link>
-    //         <Logo style={{ marginTop: "8px" }} />
-    //       </Link>
-    //     </Col>
-    //     <Col span={8}>
-    //       <Title level={4} style={{color: 'white', marginTop: '15px', paddingLeft: 0}}>Sunpro Logistics</Title>
-    //     </Col>
-    //   </Row>
-    // </Header>
+    
   );
 };
 

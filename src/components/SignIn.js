@@ -62,15 +62,6 @@ const SignIn = () => {
           placeholder="Password"
         />
       </Form.Item>
-      <Form.Item
-        name="remember"
-        valuePropName="checked"
-        {...tailLayout}
-      >
-        <Checkbox>
-          Remember me <Link to='/forgot-password' style={{marginLeft: '275px'}}>Forgot password</Link>
-        </Checkbox>
-      </Form.Item>
       <Form.Item {...tailLayout}>
         <Button type="primary" size="large" htmlType="submit" style={{ cursor: 'pointer', width: '100%'}}>
           Log in
