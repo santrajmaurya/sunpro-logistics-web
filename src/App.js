@@ -36,7 +36,7 @@ const App = () => {
   return (
     <RootStoreContext.Provider value={rootStore}>
       <Router>
-        <Layout className="page-container">
+        <Layout>
         <Header style={{ position: "fixed", zIndex: 2, width: "100%" }}>
             <AppHeader />
         </Header>
