@@ -36,13 +36,13 @@ const App = () => {
   return (
     <RootStoreContext.Provider value={rootStore}>
       <Router>
-        <Layout>
-        <Header style={{ position: "fixed", zIndex: 2, width: "100%" }}>
+        <Layout className="page-container">
+        <Header style={{ position: "fixed", zIndex: 2, width: "100%", height: '80px' }}>
             <AppHeader />
         </Header>
           {isLogin && (
           <Layout
-          style={{ minHeight: "calc(100vh - 48px)", marginTop: "60px" }}
+          style={{ minHeight: "calc(100vh - 132px)", marginTop: "60px" }}
           >
           <Sider 
           collapsible 
@@ -55,6 +55,10 @@ const App = () => {
             theme="dark"
             className="sidebar"
           >
+            <Menu.Item key="create-user" icon={<UserAddOutlined />}>
+              <span>Create/Edit User</span>
+              <Link to="/create-user" />
+            </Menu.Item>
             <Menu.Item key="booking" icon={<EditOutlined />}>
               <span>Booking</span>
               <Link to="/booking" />
@@ -85,14 +89,10 @@ const App = () => {
                 <Link to="/report/invoice" />
               </Menu.Item>
             </SubMenu>
-            <Menu.Item key="create-user" icon={<UserAddOutlined />}>
-              <span>Create/Edit User</span>
-              <Link to="/create-user" />
-            </Menu.Item>
           </Menu>
         </Sider>
         <Content
-        style={{ padding: '20px', background: "#baebe0" }}
+        style={{ padding: '30px', background: "#baebe0" }}
           >
             <Route path="/" exact strict component={() => <Redirect to="/login" />} />
             <Route exact path="/login" component={SignIn} />

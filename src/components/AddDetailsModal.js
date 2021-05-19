@@ -26,17 +26,6 @@ const AddDetailsModal = ({ closeModal, isModalVisible, details, title }) => {
         onCancel={handleCancel}
         okText="Save"
       >
-        {/* <Form form={form} name="addDeatils" labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
-          {details.map((detail) => (
-            <Form.Item name={detail.name} label={detail.label} required>
-              {detail.type === "date" ? (
-                <DatePicker placeholder={detail.label} style={{width: '100%'}} />
-              ) : (
-                <Input placeholder={detail.label} type={detail.type} />
-              )}
-            </Form.Item>
-          ))}
-        </Form> */}
         <Form form={form} name="addDeatils" labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
           {details.map((detail) => (
             <Form.Item name={detail.name} label={detail.label} required>

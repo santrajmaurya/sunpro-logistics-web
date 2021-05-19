@@ -1,20 +1,31 @@
-import React from 'react';
-import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
-import {
-  Form,
-  Input,
-  Button, Row, Col,
-} from 'antd';
+import React from "react";
+import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
+import { Form, Input, Button, Row, Col } from "antd";
 
 import { observer } from "mobx-react";
 
 const layout = {
-  labelCol: { xs: { span: 24 }, sm: { span: 24 }, md: { span: 8 }, lg: { span: 8 } },
-  wrapperCol: { xs: { span: 24 }, sm: { span: 24 }, md: { span: 8 }, lg: { span: 8 } }
-}
+  labelCol: {
+    xs: { span: 24 },
+    sm: { span: 24 },
+    md: { span: 8 },
+    lg: { span: 8 },
+  },
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 24 },
+    md: { span: 8 },
+    lg: { span: 8 },
+  },
+};
 
 const tailLayout = {
-  wrapperCol: { xs: { span: 24 }, sm: { span: 24 }, md: { span: 8 }, lg: { span: 8, offset: 8 } }
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 24 },
+    md: { span: 8 },
+    lg: { span: 8, offset: 8 },
+  },
 };
 
 const CreateEditUser = () => {
@@ -26,20 +37,23 @@ const CreateEditUser = () => {
       form={form}
       name="signin"
       initialValues={{ remember: false }}
-      style={{ marginTop: '30px' }}
+      style={{ marginTop: "30px" }}
       scrollToFirstError
-    > 
+    >
       <Form.Item
         name="userName"
         label="User Name"
         rules={[
           {
             required: true,
-            message: 'Please input your user name!',
+            message: "Please input your user name!",
           },
         ]}
       >
-      <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="User Name" />
+        <Input
+          prefix={<UserOutlined className="site-form-item-icon" />}
+          placeholder="User Name"
+        />
       </Form.Item>
       <Form.Item
         name="firstName"
@@ -47,11 +61,14 @@ const CreateEditUser = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your first name!',
+            message: "Please input your first name!",
           },
         ]}
       >
-      <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="First Name" />
+        <Input
+          prefix={<UserOutlined className="site-form-item-icon" />}
+          placeholder="First Name"
+        />
       </Form.Item>
       <Form.Item
         name="lastName"
@@ -59,11 +76,14 @@ const CreateEditUser = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your last name!',
+            message: "Please input your last name!",
           },
         ]}
       >
-      <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Last Name" />
+        <Input
+          prefix={<UserOutlined className="site-form-item-icon" />}
+          placeholder="Last Name"
+        />
       </Form.Item>
       <Form.Item
         name="email"
@@ -71,11 +91,14 @@ const CreateEditUser = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your email!',
+            message: "Please input your email!",
           },
         ]}
       >
-      <Input prefix={<MailOutlined className="site-form-item-icon" />} placeholder="Email" />
+        <Input
+          prefix={<MailOutlined className="site-form-item-icon" />}
+          placeholder="Email"
+        />
       </Form.Item>
       <Form.Item
         name="password"
@@ -83,7 +106,7 @@ const CreateEditUser = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your password!',
+            message: "Please input your password!",
           },
         ]}
       >
@@ -99,7 +122,7 @@ const CreateEditUser = () => {
         rules={[
           {
             required: true,
-            message: 'Please re-enter your password!',
+            message: "Please re-enter your password!",
           },
         ]}
       >
@@ -112,19 +135,40 @@ const CreateEditUser = () => {
       <Form.Item {...tailLayout}>
         <Row gutter={[24, 8]}>
           <Col sm={8} xs={24}>
-          <Button type="primary" size="large" htmlType="submit" style={{ cursor: 'pointer', width: '100%'}}>
-          Create
-        </Button>
+            <Button
+              type="primary"
+              size="large"
+              htmlType="submit"
+              style={{
+                cursor: "pointer",
+                width: "100%",
+                background: "green",
+                borderColor: "green",
+              }}
+            >
+              Create
+            </Button>
           </Col>
           <Col sm={8} xs={24}>
-          <Button type="primary" size="large" htmlType="submit" style={{ cursor: 'pointer', width: '100%'}}>
-          Save
-        </Button>
+            <Button
+              type="primary"
+              size="large"
+              htmlType="submit"
+              style={{ cursor: "pointer", width: "100%" }}
+            >
+              Save
+            </Button>
           </Col>
           <Col sm={8} xs={24}>
-          <Button type="primary" danger size="large" htmlType="submit" style={{ cursor: 'pointer', width: '100%'}}>
-          Cancel
-        </Button>
+            <Button
+              type="primary"
+              danger
+              size="large"
+              htmlType="submit"
+              style={{ cursor: "pointer", width: "100%" }}
+            >
+              Cancel
+            </Button>
           </Col>
         </Row>
       </Form.Item>
