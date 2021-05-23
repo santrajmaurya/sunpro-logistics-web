@@ -79,7 +79,22 @@ const Invoice = () => {
                 <Input placeholder="Consignment No" />
               </Form.Item>
             </Col>
-            <Col sm={6}>
+            {/* <Col sm={6}>
+              <Form.Item
+                name="dateOfInvoice"
+                label="Date of Invoice"
+                required
+                labelCol={{ span: 24 }}
+              >
+                <DatePicker
+                  placeholder="Date of Invoice"
+                  style={{ width: "100%" }}
+                />
+              </Form.Item>
+            </Col> */}
+          </>
+        )}
+        <Col sm={6}>
               <Form.Item
                 name="dateOfInvoice"
                 label="Date of Invoice"
@@ -92,11 +107,9 @@ const Invoice = () => {
                 />
               </Form.Item>
             </Col>
-          </>
-        )}
       </Row>
       <Row gutter={[12, 12]} sm={12} justify="start">
-        <Col xs={24} sm={3} md={3}>
+        {/* <Col xs={24} sm={3} md={3}>
           <Button
             type="primary"
             size="large"
@@ -106,7 +119,7 @@ const Invoice = () => {
           >
             Save
           </Button>
-        </Col>
+        </Col> */}
         <Col xs={24} sm={3} md={3}>
           <Button
             type="primary"

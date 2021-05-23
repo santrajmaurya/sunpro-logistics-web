@@ -7,6 +7,10 @@ import {
   ContainerOutlined,
   EditOutlined,
   UserAddOutlined,
+  FolderAddOutlined,
+  SwitcherOutlined,
+  BankOutlined,
+  IdcardOutlined,
 } from "@ant-design/icons";
 import { observer } from "mobx-react";
 import "./App.scss";
@@ -18,6 +22,9 @@ import SignIn from "./components/SignIn";
 import Booking from "./components/Booking";
 import Placement from "./components/Placement";
 import Invoice from "./components/Invoice";
+import ConsignerDetails from './components/ConsignerDetails';
+import BrokerDetails from './components/BrokerDetails';
+import CompanyDetails from './components/CompanyDetails';
 import CreateEditUser from './components/CreateEditUser';
 import SalesReport from './components/Reports/SalesReport';
 import BrokerReport from './components/Reports/BrokerReport';
@@ -47,6 +54,7 @@ const App = () => {
           <Sider 
           collapsible 
           className="ui-sider"
+          // style={{position: "absolute", height: "100vh"}}
           >
           <Menu
             defaultSelectedKeys={["1"]}
@@ -67,9 +75,25 @@ const App = () => {
               <span>Placement</span>
               <Link to="/placement" />
             </Menu.Item>
-            <Menu.Item key="invoice" icon={<ContainerOutlined />}>
-              <span>Invoice</span>
-              <Link to="/invoice" />
+            <Menu.Item key="generate-invoice" icon={<FolderAddOutlined />}>
+              <span>Generate Invoice</span>
+              <Link to="/generate-invoice" />
+            </Menu.Item>
+            <Menu.Item key="manage-invoice" icon={<ContainerOutlined />}>
+                <span>Manage Invoice</span>
+                <Link to="/report/manage-invoice" />
+            </Menu.Item>
+            <Menu.Item key="consigner-details" icon={<SwitcherOutlined />}>
+                <span>Consigner Details</span>
+                <Link to="/consigner-details" />
+            </Menu.Item>
+            <Menu.Item key="broker-details" icon={<IdcardOutlined />}>
+                <span>Broker Details</span>
+                <Link to="/broker-details" />
+            </Menu.Item>
+            <Menu.Item key="company-details" icon={<BankOutlined />}>
+                <span>Company Details</span>
+                <Link to="/company-details" />
             </Menu.Item>
             <SubMenu key="sales" icon={<FilePdfOutlined />} title="Reports">
               <Menu.Item key="sales-report">
@@ -98,7 +122,10 @@ const App = () => {
             <Route exact path="/login" component={SignIn} />
             <Route exact path="/booking" component={Booking} />
             <Route exact path="/placement" component={Placement} />
-            <Route exact path="/invoice" component={Invoice} />
+            <Route exact path="/generate-invoice" component={Invoice} />
+            <Route exact path="/consigner-details" component={ConsignerDetails} />
+            <Route exact path="/broker-details" component={BrokerDetails} />
+            <Route exact path="/company-details" component={CompanyDetails} />
             <Route exact path="/report/sales" component={SalesReport} />
             <Route exact path="/report/broker" component={BrokerReport} />
             <Route exact path="/report/booking" component={BookingReport} />
