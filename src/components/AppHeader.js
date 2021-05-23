@@ -30,7 +30,7 @@ const AppHeader = () => {
             size="large"
             danger
             htmlType="submit"
-            style={{ cursor: "pointer", marginTop: '18px' }}
+            style={{ cursor: "pointer", marginTop: '18px', width: "100%" }}
             onClick={handleLogout}
           >
             Logout

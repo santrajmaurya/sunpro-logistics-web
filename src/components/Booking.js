@@ -181,6 +181,16 @@ const Booking = () => {
                 </Select>
               </Form.Item>
             </Col>
+            <Col sm={12}>
+              <Form.Item
+                name="noOfConsignee"
+                label="No of Consignee"
+                required
+                labelCol={{ span: 24 }}
+              >
+                <Input placeholder="No of Consignee" />
+              </Form.Item>
+            </Col>
             <Col sm={24}>
               <Title level={4}>Consigner Details:</Title>
             </Col>
@@ -205,7 +215,7 @@ const Booking = () => {
                 Add New Consigner
               </Button>
             </Col>
-            <Col sm={12}>
+            {/* <Col sm={12}>
               <Form.Item
                 name="noOfConsignee"
                 label="No of Consignee"
@@ -214,7 +224,7 @@ const Booking = () => {
               >
                 <Input placeholder="No of Consignee" />
               </Form.Item>
-            </Col>
+            </Col> */}
             <Col sm={12}>
               <Form.Item
                 name="consignerAddress"
