@@ -9,13 +9,13 @@ import {
   DatePicker,
   Select,
   Radio,
-} from "antd";
+} from "./ant";
 import { observer } from "mobx-react";
 
 const { Title } = Typography;
 const { Option } = Select;
 
-const Invoice = () => {
+const GenerateInvoice = () => {
   const [form] = Form.useForm();
   const [value, setValue] = useState("");
 
@@ -79,19 +79,6 @@ const Invoice = () => {
                 <Input placeholder="Consignment No" />
               </Form.Item>
             </Col>
-            {/* <Col sm={6}>
-              <Form.Item
-                name="dateOfInvoice"
-                label="Date of Invoice"
-                required
-                labelCol={{ span: 24 }}
-              >
-                <DatePicker
-                  placeholder="Date of Invoice"
-                  style={{ width: "100%" }}
-                />
-              </Form.Item>
-            </Col> */}
           </>
         )}
         <Col sm={6}>
@@ -109,17 +96,6 @@ const Invoice = () => {
             </Col>
       </Row>
       <Row gutter={[12, 12]} sm={12} justify="start">
-        {/* <Col xs={24} sm={3} md={3}>
-          <Button
-            type="primary"
-            size="large"
-            htmlType="submit"
-            style={{ cursor: "pointer", width: "100%" }}
-            disabled={!value}
-          >
-            Save
-          </Button>
-        </Col> */}
         <Col xs={24} sm={3} md={3}>
           <Button
             type="primary"
@@ -129,8 +105,8 @@ const Invoice = () => {
             style={{
               cursor: "pointer",
               width: "100%",
-              background: "green",
-              borderColor: "green",
+              background: "#20295c",
+              borderColor: "#20295c",
             }}
           >
             Generate Invoice
@@ -141,4 +117,4 @@ const Invoice = () => {
   );
 };
 
-export default observer(Invoice);
+export default observer(GenerateInvoice);
