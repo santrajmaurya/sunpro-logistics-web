@@ -18,26 +18,26 @@ const { Option } = Select;
 
 const Booking = () => {
   const [form] = Form.useForm();
-  const [isAddConsignerModelOpen, setIsAddConsignerModelOpen] = useState(false);
+  const [isAddConsignorModelOpen, setIsAddConsignorModelOpen] = useState(false);
   const [isAddBrokerModelOpen, setIsAddBrokerModelOpen] = useState(false);
 
   const closeModal = () => {
-    setIsAddConsignerModelOpen(false);
+    setIsAddConsignorModelOpen(false);
     setIsAddBrokerModelOpen(false);
   };
 
   return (
     <>
-      {isAddConsignerModelOpen && (
+      {isAddConsignorModelOpen && (
         <AddDetailsModal
-          isModalVisible={isAddConsignerModelOpen}
+          isModalVisible={isAddConsignorModelOpen}
           closeModal={closeModal}
-          title="Add New Consigner"
+          title="Add New Consignor"
           details={[
-            { name: "consignerName", label: "Consigner Name" },
+            { name: "consignorName", label: "Consignor Name" },
             {
-              name: "consignerAddress",
-              label: "Consigner Address",
+              name: "consignorAddress",
+              label: "Consignor Address",
               type: "textarea",
             },
           ]}
@@ -63,6 +63,38 @@ const Booking = () => {
       )}
       <Form form={form} name="booking" scrollToFirstError>
         <div className="form-container">
+          <Row gutter={[12, 12]} sm={24} justify="end">
+            <Col sm={3} xs={24}>
+              <Button
+                type="primary"
+                size="large"
+                htmlType="submit"
+                style={{
+                  cursor: "pointer",
+                  width: "100%",
+                  background: "green",
+                  borderColor: "green",
+                }}
+              >
+                Add New Booking
+              </Button>
+            </Col>
+            <Col sm={3} xs={24}>
+              <Button
+                type="primary"
+                size="large"
+                htmlType="submit"
+                style={{
+                  cursor: "pointer",
+                  width: "100%",
+                  background: "#a1386e",
+                  borderColor: "#a1386e",
+                }}
+              >
+                Edit
+              </Button>
+            </Col>
+          </Row>
           <Row gutter={8} style={{ overflow: "auto" }}>
             <Col sm={24}>
               <Title level={4}>Booking:</Title>
@@ -192,16 +224,16 @@ const Booking = () => {
               </Form.Item>
             </Col>
             <Col sm={24}>
-              <Title level={4}>Consigner Details:</Title>
+              <Title level={4}>Consignor Details:</Title>
             </Col>
             <Col sm={12}>
               <Form.Item
-                name="consignerName"
-                label="Consigner Name"
+                name="consignorName"
+                label="Consignor Name"
                 required
                 labelCol={{ span: 24 }}
               >
-                <Input placeholder="Consigner Name" />
+                <Input placeholder="Consignor Name" />
               </Form.Item>
             </Col>
             <Col sm={12} xs={24}>
@@ -210,29 +242,19 @@ const Booking = () => {
                 size="middle"
                 htmlType="submit"
                 style={{ cursor: "pointer", marginTop: 39 }}
-                onClick={() => setIsAddConsignerModelOpen(true)}
+                onClick={() => setIsAddConsignorModelOpen(true)}
               >
-                Add New Consigner
+                Add New Consignor
               </Button>
             </Col>
-            {/* <Col sm={12}>
-              <Form.Item
-                name="noOfConsignee"
-                label="No of Consignee"
-                required
-                labelCol={{ span: 24 }}
-              >
-                <Input placeholder="No of Consignee" />
-              </Form.Item>
-            </Col> */}
             <Col sm={12}>
               <Form.Item
-                name="consignerAddress"
-                label="Consigner Address"
+                name="consignorAddress"
+                label="Consignor Address"
                 required
                 labelCol={{ span: 24 }}
               >
-                <Input.TextArea placeholder="Consigner Address" />
+                <Input.TextArea placeholder="Consignor Address" />
               </Form.Item>
             </Col>
             <Col sm={12}>
@@ -434,36 +456,6 @@ const Booking = () => {
             </Col>
           </Row>
           <Row gutter={[12, 12]} sm={24} justify="end">
-            <Col sm={3} xs={24}>
-              <Button
-                type="primary"
-                size="large"
-                htmlType="submit"
-                style={{
-                  cursor: "pointer",
-                  width: "100%",
-                  background: "green",
-                  borderColor: "green",
-                }}
-              >
-                Add New Booking
-              </Button>
-            </Col>
-            <Col sm={3} xs={24}>
-              <Button
-                type="primary"
-                size="large"
-                htmlType="submit"
-                style={{
-                  cursor: "pointer",
-                  width: "100%",
-                  background: "#a1386e",
-                  borderColor: "#a1386e",
-                }}
-              >
-                Edit
-              </Button>
-            </Col>
             <Col sm={3} xs={24}>
               <Button
                 type="primary"

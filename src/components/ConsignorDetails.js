@@ -7,13 +7,13 @@ import AddDetailsModal from "./AddDetailsModal";
 
 import "./style.scss";
 
-const ConsignerDetails = () => {
+const ConsignorDetails = () => {
 const [editType, setEditType] = useState('');
 const [rowSelect, setRowSelect] = useState(false);
 const [gridApi, setGridApi] = useState(null);
 const [selectedRow, setSelectedRow] = useState({});
 const [editingRowIndex, setEditingRowIndex] = useState('');
-const [isAddConsignerModelOpen, setIsAddConsignerModelOpen] = useState(false);
+const [isAddConsignorModelOpen, setIsAddConsignorModelOpen] = useState(false);
 const gridRef = useRef(null);
 
 //    useEffect(() => {
@@ -27,7 +27,7 @@ const onGridReady = (params) => {
 };
 
 const closeModal = () => {
-  setIsAddConsignerModelOpen(false);
+  setIsAddConsignorModelOpen(false);
 };
 
 const columnDef = [
@@ -90,13 +90,13 @@ const onSelectionChanged = (e) => {
 
    return (
      <>
-       {isAddConsignerModelOpen && (
+       {isAddConsignorModelOpen && (
          <AddDetailsModal
-           isModalVisible={isAddConsignerModelOpen}
+           isModalVisible={isAddConsignorModelOpen}
            closeModal={closeModal}
-           title="Add New Consigner"
+           title="Add New Consignor"
            details={[
-             { name: "consignorName", label: "Consigner Name" },
+             { name: "consignorName", label: "Consignor Name" },
              { name: "address", label: "Consignor Address", type: "textarea" },
              { name: "pin", label: "Pin", type: "number", min: 6, max: 6 },
              { name: "city", label: "City" },
@@ -126,9 +126,9 @@ const onSelectionChanged = (e) => {
                <Button
                  type="primary"
                  style={{ cursor: "pointer", width: "100%" }}
-                 onClick={() => setIsAddConsignerModelOpen(true)}
+                 onClick={() => setIsAddConsignorModelOpen(true)}
                >
-                 Add New Consigner
+                 Add New Consignor
                </Button>
              </Col>
              <Col xs={24} sm={3}>
@@ -200,4 +200,4 @@ const onSelectionChanged = (e) => {
    );
 };
 
-export default observer(ConsignerDetails);
+export default observer(ConsignorDetails);

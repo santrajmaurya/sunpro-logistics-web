@@ -53,9 +53,22 @@ const Placement = () => {
               name="bookingNo"
               label="Booking No"
               required
-              labelCol={{ span: 24 }}
+              labelCol={{ span: 24 }}  //TODO  Add a search button to open a popup to see the booking nos from DB. Autosearch
             >
               <Input placeholder="Booking No" />
+            </Form.Item>
+          </Col>
+          <Col sm={12}>
+            <Form.Item
+              name="bookingDate"
+              label="Booking Date"
+              required
+              labelCol={{ span: 24 }}
+            >
+              <DatePicker
+                placeholder="Booking Date"
+                style={{ width: "100%" }}
+              />
             </Form.Item>
           </Col>
           <Col sm={12}>
@@ -115,30 +128,17 @@ const Placement = () => {
               </Select>
             </Form.Item>
           </Col>
-          <Col sm={12}>
-            <Form.Item
-              name="bookingDate"
-              label="Booking Date"
-              required
-              labelCol={{ span: 24 }}
-            >
-              <DatePicker
-                placeholder="Booking Date"
-                style={{ width: "100%" }}
-              />
-            </Form.Item>
-          </Col>
           <Col sm={24}>
-            <Title level={4}>Consigner Details:</Title>
+            <Title level={4}>Consignor Details:</Title>
           </Col>
           <Col sm={12}>
             <Form.Item
-              name="consignerName"
-              label="Consigner Name"
+              name="consignorName"
+              label="Consignor Name"
               required
               labelCol={{ span: 24 }}
             >
-              <Input placeholder="Consigner Name" />
+              <Input placeholder="Consignor Name" />
             </Form.Item>
           </Col>
           <Col sm={12}>
@@ -172,14 +172,14 @@ const Placement = () => {
             </Form.Item>
           </Col>
           <Col sm={24}>
-            <Title level={4}>Consignee Details:</Title>
+            <Title level={4}>Consignee Details:</Title>  
           </Col>
           <Col sm={12}>
             <Form.Item
               name="consigneeName"
               label="Consignee Name"
               required
-              labelCol={{ span: 24 }}
+              labelCol={{ span: 24 }}   // TODO: all consignee details will be replicated based on no of consignee on Booking page
             >
               <Input placeholder="Consignee Name" />
             </Form.Item>
