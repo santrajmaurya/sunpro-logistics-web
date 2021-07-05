@@ -8,7 +8,7 @@ import {
   Typography,
   Select,
   DatePicker,
-} from "antd";
+} from "./ant";
 import { observer } from "mobx-react";
 
 import AddDetailsModal from "./AddDetailsModal";
@@ -72,8 +72,8 @@ const Booking = () => {
                 style={{
                   cursor: "pointer",
                   width: "100%",
-                  background: "green",
-                  borderColor: "green",
+                  background: "#20295c",
+                  borderColor: "#20295c",
                 }}
               >
                 Add New Booking
@@ -87,8 +87,8 @@ const Booking = () => {
                 style={{
                   cursor: "pointer",
                   width: "100%",
-                  background: "#a1386e",
-                  borderColor: "#a1386e",
+                  background: "#e36d25",
+                  borderColor: "#e36d25",
                 }}
               >
                 Edit
@@ -241,7 +241,7 @@ const Booking = () => {
                 type="primary"
                 size="middle"
                 htmlType="submit"
-                style={{ cursor: "pointer", marginTop: 39 }}
+                style={{ cursor: "pointer", marginTop: 39, borderColor:'#20295c', background: '#20295c' }}
                 onClick={() => setIsAddConsignorModelOpen(true)}
               >
                 Add New Consignor
@@ -368,7 +368,7 @@ const Booking = () => {
                 type="primary"
                 size="middle"
                 htmlType="submit"
-                style={{ cursor: "pointer", marginTop: 39 }}
+                style={{ cursor: "pointer", marginTop: 39, borderColor:'#20295c', background: '#20295c' }}
                 onClick={() => setIsAddBrokerModelOpen(true)}
               >
                 Add New
@@ -461,7 +461,7 @@ const Booking = () => {
                 type="primary"
                 size="large"
                 htmlType="submit"
-                style={{ cursor: "pointer", width: "100%" }}
+                style={{ cursor: "pointer", width: "100%", borderColor:'#20295c', background: '#20295c' }}
               >
                 Save
               </Button>
@@ -472,7 +472,7 @@ const Booking = () => {
                 danger
                 size="large"
                 htmlType="submit"
-                style={{ cursor: "pointer", width: "100%" }}
+                style={{ cursor: "pointer", width: "100%", borderColor:'#e36d25', background: '#e36d25' }}
               >
                 Cancel
               </Button>

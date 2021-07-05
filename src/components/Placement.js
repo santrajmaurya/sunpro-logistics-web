@@ -189,7 +189,7 @@ const Placement = () => {
               type="primary"
               size="middle"
               htmlType="submit"
-              style={{ cursor: "pointer", marginTop: 39 }}
+              style={{ cursor: "pointer", marginTop: 39, borderColor:'#20295c', background: '#20295c' }}
               onClick={() => setIsAddConsigneeModelOpen(true)}
             >
               Add New Consignee
@@ -527,7 +527,7 @@ const Placement = () => {
               type="primary"
               size="large"
               htmlType="submit"
-              style={{ cursor: "pointer", width: "100%" }}
+              style={{ cursor: "pointer", width: "100%", borderColor:'#20295c', background: '#20295c' }}
             >
               Save
             </Button>
@@ -538,7 +538,7 @@ const Placement = () => {
               danger
               size="large"
               htmlType="submit"
-              style={{ cursor: "pointer", width: "100%" }}
+              style={{ cursor: "pointer", width: "100%", borderColor:'#e36d25', background: '#e36d25' }}
             >
               Cancel
             </Button>

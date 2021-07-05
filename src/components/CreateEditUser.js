@@ -1,6 +1,6 @@
 import React from "react";
 import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
-import { Form, Input, Button, Row, Col } from "antd";
+import { Form, Input, Button, Row, Col } from "./ant";
 
 import { observer } from "mobx-react";
 
@@ -142,8 +142,8 @@ const CreateEditUser = () => {
               style={{
                 cursor: "pointer",
                 width: "100%",
-                background: "green",
-                borderColor: "green",
+                background: "#20295c",
+                borderColor: "#20295c",
               }}
             >
               Create
@@ -154,7 +154,7 @@ const CreateEditUser = () => {
               type="primary"
               size="large"
               htmlType="submit"
-              style={{ cursor: "pointer", width: "100%" }}
+              style={{ cursor: "pointer", width: "100%", borderColor: '#e36d25', background: '#e36d25' }}
             >
               Save
             </Button>

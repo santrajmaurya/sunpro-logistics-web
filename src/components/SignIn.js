@@ -1,24 +1,34 @@
-import React, { useContext } from 'react';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import {
-  Form,
-  Input,
-  Checkbox,
-  Button,
-} from 'antd';
+import React, { useContext } from "react";
+import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Form, Input, Checkbox, Button } from "antd";
 
 import { observer } from "mobx-react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import { RootStoreContext } from "../App";
 
 const layout = {
-  labelCol: { xs: { span: 24 }, sm: { span: 24 }, md: { span: 8 }, lg: { span: 8 } },
-  wrapperCol: { xs: { span: 24 }, sm: { span: 24 }, md: { span: 8 }, lg: { span: 8 } }
-}
+  labelCol: {
+    xs: { span: 24 },
+    sm: { span: 24 },
+    md: { span: 8 },
+    lg: { span: 8 },
+  },
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 24 },
+    md: { span: 8 },
+    lg: { span: 8 },
+  },
+};
 
 const tailLayout = {
-  wrapperCol: { xs: { span: 24 }, sm: { span: 24 }, md: { span: 8, offset: 8 }, lg: { span: 8, offset: 8 } }
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 24 },
+    md: { span: 8, offset: 8 },
+    lg: { span: 8, offset: 8 },
+  },
 };
 
 const SignIn = () => {
@@ -31,20 +41,23 @@ const SignIn = () => {
       form={form}
       name="signin"
       initialValues={{ remember: false }}
-      style={{ marginTop: '30px' }}
+      style={{ marginTop: "30px" }}
       scrollToFirstError
-    > 
+    >
       <Form.Item
         name="userName"
         label="User Name"
         rules={[
           {
             required: true,
-            message: 'Please input your user name!',
+            message: "Please input your user name!",
           },
         ]}
       >
-      <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="User Name" />
+        <Input
+          prefix={<UserOutlined className="site-form-item-icon" />}
+          placeholder="User Name"
+        />
       </Form.Item>
       <Form.Item
         name="password"
@@ -52,7 +65,7 @@ const SignIn = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your password!',
+            message: "Please input your password!",
           },
         ]}
       >
@@ -63,7 +76,17 @@ const SignIn = () => {
         />
       </Form.Item>
       <Form.Item {...tailLayout}>
-        <Button type="primary" size="large" htmlType="submit" style={{ cursor: 'pointer', width: '100%'}}>
+        <Button
+          type="primary"
+          size="large"
+          htmlType="submit"
+          style={{
+            cursor: "pointer",
+            width: "100%",
+            borderColor: "#20295c",
+            background: "#20295c",
+          }}
+        >
           Log in
         </Button>
       </Form.Item>

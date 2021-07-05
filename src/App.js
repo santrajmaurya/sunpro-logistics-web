@@ -22,7 +22,7 @@ import AppFooter from "./components/AppFooter";
 import SignIn from "./components/SignIn";
 import Booking from "./components/Booking";
 import Placement from "./components/Placement";
-import Invoice from "./components/Invoice";
+import GenerateInvoice from "./components/GenerateInvoice";
 import ConsignorDetails from './components/ConsignorDetails';
 import ConsigneeDetails from './components/ConsigneeDetails';
 import BrokerDetails from './components/BrokerDetails';
@@ -46,7 +46,7 @@ const App = () => {
     <RootStoreContext.Provider value={rootStore}>
       <Router>
         <Layout className="page-container">
-        <Header style={{ position: "fixed", zIndex: 2, width: "100%", height: '80px' }}>
+        <Header style={{ position: "fixed", zIndex: 2, width: "100%", height: '80px'}}>
             <AppHeader />
         </Header>
           {isLogin && (
@@ -54,9 +54,8 @@ const App = () => {
           style={{ minHeight: "calc(100vh - 132px)", marginTop: "60px" }}
           >
           <Sider 
-          collapsible 
-          className="ui-sider"
-          // style={{position: "absolute", height: "100vh"}}
+          collapsible
+          // className="ui-sider"
           >
           <Menu
             defaultSelectedKeys={["1"]}
@@ -128,7 +127,7 @@ const App = () => {
             <Route exact path="/login" component={SignIn} />
             <Route exact path="/booking" component={Booking} />
             <Route exact path="/placement" component={Placement} />
-            <Route exact path="/generate-invoice" component={Invoice} />
+            <Route exact path="/generate-invoice" component={GenerateInvoice} />
             <Route exact path="/consignor-details" component={ConsignorDetails} />
             <Route exact path="/consignee-details" component={ConsigneeDetails} />
             <Route exact path="/broker-details" component={BrokerDetails} />

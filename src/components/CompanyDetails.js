@@ -76,19 +76,19 @@ const onSelectionChanged = (e) => {
    return (
      <>
        <Row gutter={[12, 12]} sm={24} style={{ marginBottom: "18px" }}>
-         <Col xs={24} sm={21} style={{ padding: 0 }}>
+         <Col xs={24} sm={18} style={{ padding: 0 }}>
            <PageHeader title="Company Details" />
          </Col>
          {rowSelect === false && (
            <>
-             <Col xs={24} sm={3}>
+             <Col xs={24} sm={3} offset={3}>
                <Button
                  type="primary"
                  style={{
                    cursor: "pointer",
                    width: "100%",
-                   background: "#8f8f55",
-                   borderColor: "#8f8f55",
+                   background: "#e36d25",
+                   borderColor: "#e36d25",
                  }}
                  onClick={editSelectedRow}
                >

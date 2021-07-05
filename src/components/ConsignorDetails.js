@@ -125,7 +125,7 @@ const onSelectionChanged = (e) => {
              <Col xs={24} sm={3}>
                <Button
                  type="primary"
-                 style={{ cursor: "pointer", width: "100%" }}
+                 style={{ cursor: "pointer", width: "100%", borderColor:'#20295c', background: '#20295c'  }}
                  onClick={() => setIsAddConsignorModelOpen(true)}
                >
                  Add New Consignor
@@ -137,8 +137,8 @@ const onSelectionChanged = (e) => {
                  style={{
                    cursor: "pointer",
                    width: "100%",
-                   background: "#8f8f55",
-                   borderColor: "#8f8f55",
+                   background: "#e36d25",
+                   borderColor: "#e36d25",
                  }}
                  onClick={editSelectedRow}
                >
