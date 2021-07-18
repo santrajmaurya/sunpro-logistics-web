@@ -2,7 +2,7 @@
   "name": "sunpro-logistics-web",
   "version": "0.1.0",
   "description": "Sunpro Logistics",
-  "homepage": "https://santrajmaurya.github.io/sunpro-logistics",
+  "homepage": "https://santrajmaurya.github.io/sunpro-logistics-web",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
