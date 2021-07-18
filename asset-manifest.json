@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/sunpro-logistics/static/css/main.5f3dc7db.chunk.css",
+    "main.js": "/sunpro-logistics/static/js/main.37f30b00.chunk.js",
+    "main.js.map": "/sunpro-logistics/static/js/main.37f30b00.chunk.js.map",
+    "runtime-main.js": "/sunpro-logistics/static/js/runtime-main.896d68b6.js",
+    "runtime-main.js.map": "/sunpro-logistics/static/js/runtime-main.896d68b6.js.map",
+    "static/css/2.640ec069.chunk.css": "/sunpro-logistics/static/css/2.640ec069.chunk.css",
+    "static/js/2.d15a5e4e.chunk.js": "/sunpro-logistics/static/js/2.d15a5e4e.chunk.js",
+    "static/js/2.d15a5e4e.chunk.js.map": "/sunpro-logistics/static/js/2.d15a5e4e.chunk.js.map",
+    "static/js/3.5a4b4b2d.chunk.js": "/sunpro-logistics/static/js/3.5a4b4b2d.chunk.js",
+    "static/js/3.5a4b4b2d.chunk.js.map": "/sunpro-logistics/static/js/3.5a4b4b2d.chunk.js.map",
+    "index.html": "/sunpro-logistics/index.html",
+    "static/css/2.640ec069.chunk.css.map": "/sunpro-logistics/static/css/2.640ec069.chunk.css.map",
+    "static/css/main.5f3dc7db.chunk.css.map": "/sunpro-logistics/static/css/main.5f3dc7db.chunk.css.map",
+    "static/js/2.d15a5e4e.chunk.js.LICENSE.txt": "/sunpro-logistics/static/js/2.d15a5e4e.chunk.js.LICENSE.txt",
+    "static/media/antd.less": "/sunpro-logistics/static/media/antd.1fb1fa95.less",
+    "static/media/crown.207ae289.svg": "/sunpro-logistics/static/media/crown.207ae289.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.896d68b6.js",
+    "static/css/2.640ec069.chunk.css",
+    "static/js/2.d15a5e4e.chunk.js",
+    "static/css/main.5f3dc7db.chunk.css",
+    "static/js/main.37f30b00.chunk.js"
+  ]
+}
