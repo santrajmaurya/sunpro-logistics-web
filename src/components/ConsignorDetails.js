@@ -7,27 +7,32 @@ import AddDetailsModal from "./AddDetailsModal";
 
 import "./style.scss";
 
-const BrokerDetails = () => {
-
+const ConsignorDetails = () => {
 const [editType, setEditType] = useState('');
 const [rowSelect, setRowSelect] = useState(false);
 const [gridApi, setGridApi] = useState(null);
 const [selectedRow, setSelectedRow] = useState({});
 const [editingRowIndex, setEditingRowIndex] = useState('');
-const [isAddBrokerModelOpen, setIsAddBrokerModelOpen] = useState(false);
+const [isAddConsignorModelOpen, setIsAddConsignorModelOpen] = useState(false);
 const gridRef = useRef(null);
+
+//    useEffect(() => {
+//        fetch('https://www.ag-grid.com/example-assets/row-data.json')
+//            .then(result => result.json())
+//            .then(rowData => setRowData(rowData))
+//    }, []);
 
 const onGridReady = (params) => {
   setGridApi(params.api);
 };
 
 const closeModal = () => {
-  setIsAddBrokerModelOpen(false);
+  setIsAddConsignorModelOpen(false);
 };
 
 const columnDef = [
   { field: "id", editable: false, checkboxSelection: true },
-  { field: "brokerName", minWidth: 180 },
+  { field: "consignorName", minWidth: 180 },
   { field: "address", minWidth: 180 },
   { field: "pin" },
   { field: "city" },
@@ -41,12 +46,12 @@ const columnDef = [
 ];
 
 const rowData = [ 
-  {id: 1, brokerName: 'Abc', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
-  {id: 2, brokerName: 'xyz', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
-  {id: 3, brokerName: 'Test', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
-  {id: 4, brokerName: 'mno', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
-  {id: 5, brokerName: 'kjy', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
-  {id: 6, brokerName: 'Abc', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
+  {id: 1, consignorName: 'Abc', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
+  {id: 2, consignorName: 'xyz', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
+  {id: 3, consignorName: 'Test', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
+  {id: 4, consignorName: 'mno', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
+  {id: 5, consignorName: 'kjy', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
+  {id: 6,consignorName: 'Abc', address: '6 a,short Street, Park Street', pin: '700016', city: 'Kolkata', state: 'West Bengal', country: 'India', officeNo: '03322478018', mobileNo: '5478214587', emailId: 'test@gmail.com', website: 'www.test.com', gstin: 'AGTBH435SKFF'},
 ];
 
 
@@ -68,6 +73,11 @@ const cancelEdit = () => {
   setRowSelect(false);
 };
 
+const updateRow = () => {
+  gridApi.stopEditing();
+  setRowSelect(false);
+};
+
 const onSelectionChanged = (e) => {
  if(editingRowIndex !== e.rowIndex) {
   setSelectedRow(e);
@@ -80,14 +90,14 @@ const onSelectionChanged = (e) => {
 
    return (
      <>
-       {isAddBrokerModelOpen && (
+       {isAddConsignorModelOpen && (
          <AddDetailsModal
-           isModalVisible={isAddBrokerModelOpen}
+           isModalVisible={isAddConsignorModelOpen}
            closeModal={closeModal}
-           title="Add New Broker"
+           title="Add New Consignor"
            details={[
-             { name: "brokerName", label: "Broker Name" },
-             { name: "address", label: "Broker Address", type: "textarea" },
+             { name: "consignorName", label: "Consignor Name" },
+             { name: "address", label: "Consignor Address", type: "textarea" },
              { name: "pin", label: "Pin", type: "number", min: 6, max: 6 },
              { name: "city", label: "City" },
              { name: "state", label: "State" },
@@ -108,17 +118,17 @@ const onSelectionChanged = (e) => {
        )}
        <Row gutter={[12, 12]} sm={24} style={{ marginBottom: "18px" }}>
          <Col xs={24} sm={18} style={{ padding: 0 }}>
-           <PageHeader title="Broker Details" />
+           <PageHeader title="Consignor Details" />
          </Col>
          {rowSelect === false && (
            <>
              <Col xs={24} sm={3}>
                <Button
                  type="primary"
-                 style={{ cursor: "pointer", width: "100%", borderColor:'#20295c', background: '#20295c' }}
-                 onClick={() => setIsAddBrokerModelOpen(true)}
+                 style={{ cursor: "pointer", width: "100%", borderColor:'#20295c', background: '#20295c'  }}
+                 onClick={() => setIsAddConsignorModelOpen(true)}
                >
-                 Add New Broker
+                 Add New Consignor
                </Button>
              </Col>
              <Col xs={24} sm={3}>
@@ -149,7 +159,7 @@ const onSelectionChanged = (e) => {
                    background: "green",
                    borderColor: "green",
                  }}
-                 onClick={editSelectedRow}
+                 onClick={updateRow}
                >
                  Update
                </Button>
@@ -190,4 +200,4 @@ const onSelectionChanged = (e) => {
    );
 };
 
-export default observer(BrokerDetails);
+export default observer(ConsignorDetails);

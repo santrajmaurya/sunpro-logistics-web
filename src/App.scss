@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 .App {
   text-align: center;
@@ -21,10 +21,6 @@
 
 .ant-layout-sider-trigger {
   bottom: 67px;
-}
-
-.ant-layout-footer {
-  padding: 0;
 }
 
 .ant-layout-sider-children {

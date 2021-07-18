@@ -1,43 +1,41 @@
 import React from "react";
-import { Row, Col, Typography, Button } from "antd";
-import { Link, useHistory } from "react-router-dom";
+import { Row, Col, Button } from "./ant";
+import { useHistory } from "react-router-dom";
 import { observer } from "mobx-react";
 
-import { ReactComponent as Logo } from "../assessts/crown.svg";
+import logo from '../assessts/logo1.png'
 
-const { Title } = Typography;
+import "./style.scss";
 
 const AppHeader = () => {
   const history = useHistory();
 
   const handleLogout = () => {
-    history.push('/login');
-  }
-  
+    history.push("/login");
+  };
+
   return (
-      <Row sm={24}>
-        <Col sm={2}>
-        <Link>
-            <Logo style={{ marginTop: "12px" }} />
-          </Link>
-        </Col>
-        <Col sm={8}>
-          <Title level={4} style={{color: 'white', marginTop: '20px', paddingLeft: 0}}>Sunpro Logistics</Title>
-        </Col>
-        <Col sm={2} offset={12}>
+    <Row sm={24}>
+      <Col sm={10}>
+        <img
+          alt="No logo found"
+          className="logo"
+          src={logo}
+        />
+      </Col>
+      <Col sm={2} offset={12}>
         <Button
-            type="primary"
-            size="large"
-            danger
-            htmlType="submit"
-            style={{ cursor: "pointer", marginTop: '18px', width: "100%" }}
-            onClick={handleLogout}
-          >
-            Logout
-          </Button>
-        </Col>
-      </Row>
-    
+          type="primary"
+          size="large"
+          danger
+          htmlType="submit"
+          style={{ cursor: "pointer", marginTop: "18px", width: "100%",  borderColor:'#20295c', background: '#20295c' }}
+          onClick={handleLogout}
+        >
+          Logout
+        </Button>
+      </Col>
+    </Row>
   );
 };
 

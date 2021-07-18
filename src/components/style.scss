@@ -7,5 +7,53 @@
 }
 
 .ant-layout-header {
-    padding: 0 28px
+    padding: 0 28px;
+    background-color: #e36d25;
 }
+
+.logo {
+    max-width: 169px;
+    max-height: 92%;
+    margin: 6px;
+  }
+
+  .ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub {
+    color: white;
+    background: #20295c;
+}
+
+.ant-layout-sider {
+    background: #20295c;
+}
+
+.ant-layout-sider-trigger {
+    background: #20295c;
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #e36d25;
+}
+
+.ant-btn-primary {
+    color: #fff;
+    background: #20295c;
+    border-color: #20295c;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+}
+
+.ant-tooltip-inner {
+    background-color: #e36d25;
+}
+
+.ant-layout-footer {
+    padding: 0;
+    text-align: center;
+    background-color: #e36d25;
+    color: #20295c;
+    font-weight: 700;
+    // position: sticky;
+    bottom: 0;
+    height: 70px;
+    z-index: 9;
+  }
