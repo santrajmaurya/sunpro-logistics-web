@@ -8,8 +8,8 @@ const AppFooter = () => {
     <Footer
       style={{
         textAlign: "center",
-        backgroundColor: "#001529",
-        color: "wheat",
+        backgroundColor: "#e36d25",
+        color: "#20295c",
         position: "sticky", 
         bottom: "0",
         height: '70px'

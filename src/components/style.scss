@@ -45,3 +45,15 @@
 .ant-tooltip-inner {
     background-color: #e36d25;
 }
+
+.ant-layout-footer {
+    padding: 0;
+    text-align: center;
+    background-color: #e36d25;
+    color: #20295c;
+    font-weight: 700;
+    // position: sticky;
+    bottom: 0;
+    height: 70px;
+    z-index: 9;
+  }
